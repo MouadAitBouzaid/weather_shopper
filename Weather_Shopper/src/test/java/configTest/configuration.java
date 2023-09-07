@@ -4,11 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class configuration {
-    private WebDriver driver;
+    protected WebDriver driver;
+
+    public configuration(WebDriver webDriver){
+        driver=webDriver;
+    }
 
     @BeforeClass
     public void open_browser(){
@@ -19,7 +24,8 @@ public class configuration {
         driver.get("https://weathershopper.pythonanywhere.com/");
         driver.manage().window().maximize();
     }
-    //   @AfterClass
+
+ //   @AfterClass
     public void close_broser(){
         driver.close();
     }
