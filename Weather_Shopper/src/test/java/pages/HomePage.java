@@ -1,19 +1,24 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utils.Commun;
 
-public class HomePage extends BasePage{
 
+public class HomePage extends Commun {
+    WebDriver driver;
     public HomePage(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
-
-    private By Buy_moisturizers=By.linkText("Buy moisturizers");
+    @FindBy(xpath = "//button[text()='Buy moisturizers']")
+    WebElement Buy_moisturizers;
 
     public void clickOnBuymoisturizers(){
-        if(checkPage("Current temperature"))
-        basePageDriver.findElement(Buy_moisturizers).click();
+        if(checkPage("Current Temperature",driver))
+        Buy_moisturizers.click();
     }
 
 }

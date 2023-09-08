@@ -9,24 +9,13 @@ import pages.MoisturizersPage;
 
 public class HomeTest extends configuration{
 
-    WebDriver driver;
-
-    public HomeTest(WebDriver driver) {
-        super(driver);
-    }
-
-
-
     @Test
     public void test1() throws InterruptedException{
         HomePage hp =new HomePage(driver);
-        CheckoutPage cp = new CheckoutPage(driver);
-        MoisturizersPage mp = new MoisturizersPage(driver);
+    //    CheckoutPage cp = new CheckoutPage(driver);
+     //   MoisturizersPage mp = new MoisturizersPage(driver);
 
         hp.clickOnBuymoisturizers();
-
-
-
     }
 
 }

@@ -9,11 +9,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class configuration {
-    protected WebDriver driver;
+    public WebDriver driver;
 
-    public configuration(WebDriver webDriver){
-        driver=webDriver;
-    }
 
     @BeforeClass
     public void open_browser(){
