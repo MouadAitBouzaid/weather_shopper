@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class configuration {
-    public WebDriver driver;
+    public static WebDriver driver;
 
 
     @BeforeClass
@@ -22,8 +22,13 @@ public class configuration {
         driver.manage().window().maximize();
     }
 
- //   @AfterClass
+    @AfterClass
     public void close_broser(){
+        try{
+            Thread.sleep(10000);
+        }catch (Exception e){
+        }
         driver.close();
+
     }
 }

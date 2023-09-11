@@ -3,20 +3,24 @@ package utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Commun {
+    int EXPLICIT_WAIT = 10;
 
+    public void waitForElementThenClick(WebDriver driver, WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
 
-    public boolean checkPage(String titlePage, WebDriver driver){
-        if(titlePage.equalsIgnoreCase(driver.getTitle())) {
-            System.out.println("Correct La page est :"+ titlePage);
-            return true;
-        }else {
-            System.out.println("incorrect La page est :"+ titlePage);
-            return false;
-        }
+    public void waitForElementToBeVisible(WebDriver driver, WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     // Sélectionnez tous les éléments div contenant les produits
@@ -29,5 +33,4 @@ public class Commun {
         }
         return productDivs;
     }
-
 }
