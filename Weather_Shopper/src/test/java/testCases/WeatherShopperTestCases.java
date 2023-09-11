@@ -6,11 +6,11 @@ import pages.CheckoutPage;
 import pages.HomePage;
 import pages.MoisturizersPage;
 
-public class WeatherShopperTestCases extends configuration{
+public class WeatherShopperTestCases extends configuration {
 
     @Test
-    public void test1() throws InterruptedException{
-        HomePage hp =new HomePage(driver);
+    public void test1() throws InterruptedException {
+        HomePage hp = new HomePage(driver);
         //Je check si je me suis bien redirigé vers la page Current temperature
         hp.checkCurrentMoisturizersPageTitle();
         //Je clique sur le bouton Buy moisturizers
@@ -38,8 +38,12 @@ public class WeatherShopperTestCases extends configuration{
         cp.checkingPopUp();
         //Je saisis les informations nécessaires pour compléter l’achat (email, card number , date , cvc, zip code)
         cp.checkout();
-
-
+        //Je check le total affiché sur le pop-up
+        cp.checkingTotalCart();
+        //Je clique sur le bouton pay iner
+        cp.validationPayement();
+        //Je check si je me suis bien redirigé vers la page confirmation
+        cp.messageSuccessVerification();
     }
 
 }

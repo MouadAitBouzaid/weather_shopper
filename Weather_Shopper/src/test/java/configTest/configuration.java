@@ -13,8 +13,8 @@ public class configuration {
 
 
     @BeforeClass
-    public void open_browser(){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\moaitbou\\IdeaProjects\\TestingPractice\\Weather_Shopper\\src\\main\\resources\\drivers\\chromedriver.exe");
+    public void open_browser() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\moaitbou\\IdeaProjects\\TestingPractice\\Weather_Shopper\\src\\main\\resources\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         //Lancer un navigateur chrome
         //Ouvrez le site Web https://www.lambdatest.com
@@ -22,11 +22,11 @@ public class configuration {
         driver.manage().window().maximize();
     }
 
-    @AfterClass
-    public void close_broser(){
-        try{
+ //   @AfterClass
+    public void close_broser() {
+        try {
             Thread.sleep(10000);
-        }catch (Exception e){
+        } catch (Exception e) {
         }
         driver.close();
 

@@ -15,15 +15,15 @@ public class HomePage extends Commun {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public void checkCurrentMoisturizersPageTitle() {
         Assert.assertEquals(driver.getTitle(), "Current Temperature");
     }
 
-    public void clickOnBuymoisturizers(){
-        waitForElementThenClick(driver,Buy_moisturizers);
+    public void clickOnBuymoisturizers() {
+        waitForElementThenClick(driver, Buy_moisturizers);
     }
 
 }
